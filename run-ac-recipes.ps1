@@ -46,7 +46,7 @@ ForEach-Object {
         Invoke-Expression "recipes\$_"
     } elseif ($extension -eq ".reg") { 
         label "$_ Registry patch"
-        Invoke-Expression "regedit /s registry\$_"
+        Invoke-Expression "reg import recipes\$_"
     } else {
         label "Skipping $_ - unsupported extension."
     }
